@@ -10,4 +10,4 @@ function PureCom(props) {
   );
 }
 
-export default PureCom;
+export default React.memo(PureCom);

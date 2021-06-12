@@ -6,19 +6,20 @@ import PureCom from './component/PureCom';
 const LazyLoad = lazy(() => import('./component/LazyLoad'));
 
 function App() {
-  const [number, setNumber] = useState(1);
+  const [text, setText] = useState('Hello');
 
   useEffect(() => {
     setInterval(() => {
-      setNumber(number);
-    }, 1000);
-  }, [number]);
+      console.log('test');
+      setText(' bunny ');
+    }, 3000);
+  });
 
-  console.log('render Main App', number);
+  console.log('render Main App', text);
   return (
     <div className='App'>
       <NoLazy />
-      <PureCom number={number} />
+      <PureCom number={text} />
       <Suspense
         fallback={
           <div>
